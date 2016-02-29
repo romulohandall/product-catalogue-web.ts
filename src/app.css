@@ -27,7 +27,12 @@ body {
 }
 
 .container-fluid {
-    margin: 10px;
+    margin: 10px 35px 10px 10px;
+}
+@media (max-width: 768px) {
+    .container-fluid {
+        margin: 10px;
+    }
 }
 
 .container-outer {

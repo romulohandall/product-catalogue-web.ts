@@ -8,6 +8,13 @@
     right: 10px;
 }
 
+@media (max-width: 768px) {
+    .nav-settings {
+        left: 135px;
+        top: 27px;
+    }
+}
+
 .nav-settings a, .nav-settings a:visited, .nav-settings a:hover {
     color: #333;
 }

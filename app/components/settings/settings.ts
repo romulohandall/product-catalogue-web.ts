@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
-import {ComponentInstruction, RouteParams} from 'angular2/router';
-import {NgForm, Validators, ControlGroup, FormBuilder} from 'angular2/common';
+import {RouteParams} from 'angular2/router';
+import {Validators, ControlGroup, FormBuilder} from 'angular2/common';
 
 import {ContentfulService} from '../../services/contentful-service';
 import {SettingsModel} from './settings-model';
@@ -16,11 +16,11 @@ import {SettingsModel} from './settings-model';
 
 export class Settings {
 
-    model:SettingsModel = new SettingsModel();
+    public model:SettingsModel = new SettingsModel();
 
-    myForm:ControlGroup;
+    public myForm:ControlGroup;
 
-    urlDeepBase:string = null;
+    public urlDeepBase:string = null;
 
     constructor(public contentfulService:ContentfulService, routeParams:RouteParams, formBuilder:FormBuilder) {
 
@@ -39,16 +39,32 @@ export class Settings {
 
         // Custom validation for apiKey and spaceID.
         this.myForm = formBuilder.group({
-            spaceId: [this.model.spaceId, Validators.compose([Validators.required, this.spaceIdValidator])],
-            apiKey: [this.model.apiKey, Validators.compose([Validators.required, this.apiKeyValidator])]
+            apiKey: [this.model.apiKey, Validators.compose([Validators.required, this.apiKeyValidator])],
+            spaceId: [this.model.spaceId, Validators.compose([Validators.required, this.spaceIdValidator])]
         });
 
         this.urlDeepBase = window.location.host + '/settings?';
 
     }
 
+    /**
+     * Template click handler.
+     */
+    public saveSession() {
+        this.contentfulService.setSessionCredentials(this.model.apiKey, this.model.spaceId);
+    }
+
+    public removeSession() {
+        this.model = new SettingsModel();
+        this.contentfulService.clearSessionCredentials();
+    }
+
+    public rebootApp() {
+        window.location.href = window.location.origin;
+    }
+
     private spaceIdValidator(id) {
-        var valid = /^[a-z0-9]{12}$/.test(id.value);
+        let valid = /^[a-z0-9]{12}$/.test(id.value);
         if (valid) {
             return null;
         }
@@ -56,26 +72,12 @@ export class Settings {
     }
 
     private apiKeyValidator(id) {
-        var valid = /^[a-z0-9]{64}$/.test(id.value);
+        let valid = /^[a-z0-9]{64}$/.test(id.value);
         if (valid) {
             return null;
         }
         return {'invalidApiKey': true};
     }
 
-    /**
-     * Template click handler.
-     */
-    saveSession() {
-        this.contentfulService.setSessionCredentials(this.model.apiKey, this.model.spaceId);
-    }
 
-    removeSession() {
-        this.model = new SettingsModel();
-        this.contentfulService.clearSessionCredentials();
-    }
-
-    rebootApp() {
-        window.location.href = window.location.origin;
-    }
 }

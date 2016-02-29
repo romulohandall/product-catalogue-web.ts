@@ -15,19 +15,19 @@ import {ContentfulModel} from './contentful-model';
 @Injectable()
 export class ContentfulService {
 
-    static SESSION_STORAGE_APIKEY:string = 'cfApiKey';
+    public static SESSION_STORAGE_APIKEY:string = 'cfApiKey';
 
-    static SESSION_STORAGE_SPACEID:string = 'cfSpaceId';
+    public static SESSION_STORAGE_SPACEID:string = 'cfSpaceId';
+
+    public isUserSessionStored = false;
+
+    public isUserSpaceLoaded = false;
+
+    public model:ContentfulModel = new ContentfulModel();
 
     private sdkClient;
 
     private entriesPromise:Promise<any>;
-
-    isUserSessionStored = false;
-
-    isUserSpaceLoaded = false;
-
-    model:ContentfulModel = new ContentfulModel();
 
     constructor() {
 

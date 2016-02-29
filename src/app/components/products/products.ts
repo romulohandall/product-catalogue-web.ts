@@ -11,7 +11,7 @@ import {ContentfulService} from '../../services/contentful-service';
     pipes: []
 })
 export class Products {
-    products:Promise<any>;
+    public products:Promise<any>;
 
     constructor(routeParams:RouteParams, contentfulService:ContentfulService) {
         this.products = contentfulService.getProducts(routeParams.get('categoryId')).then(function (products) {

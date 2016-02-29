@@ -1,12 +1,12 @@
 import {Component} from 'angular2/core';
-import {Router, Route, RouteConfig, ROUTER_DIRECTIVES, Location} from 'angular2/router';
+import {Route, RouteConfig, ROUTER_DIRECTIVES, Location} from 'angular2/router';
 
 import {Products} from './components/products/products';
 import {Categories} from './components/categories/categories';
 import {ProductDetail} from './components/product-detail/product-detail';
 import {About} from './components/about/about';
-import {Settings} from "./components/settings/settings";
-import {ContentfulService} from "./services/contentful-service";
+import {Settings} from './components/settings/settings';
+import {ContentfulService} from './services/contentful-service';
 
 @Component({
     selector: 'prouduct-catalogue-app',
@@ -26,7 +26,7 @@ import {ContentfulService} from "./services/contentful-service";
 ])
 export class ProuductCatalogueApp {
 
-    spaceName:Promise<string>;
+    public spaceName:Promise<string>;
 
     constructor(public location:Location, public contentfulService:ContentfulService) {
 

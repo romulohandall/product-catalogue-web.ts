@@ -13,7 +13,7 @@ import {ContentfulService} from '../../services/contentful-service';
 })
 
 export class Categories {
-    categories:any;
+    public categories:any;
     constructor(contentfulService:ContentfulService) {
         contentfulService.getCategories().then(entries => {
             this.categories = entries;

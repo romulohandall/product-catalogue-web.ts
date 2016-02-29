@@ -6,7 +6,7 @@ import {Component} from 'angular2/core';
     styleUrls: ['app/components/about/about.css'],
     providers: [],
     directives: [],
-    pipes: []
+    pipes: [],
 })
 
 export class About {

@@ -22,7 +22,7 @@ interaction between content editing and rendering can be demoed.
     - create a new space from the product catalogue template
     - create an api key for the management API
     - from the running example app on `http://localhost:8080`
-        - click the samll gauge icon in the lower right corner to open the settings dialogue
+        - click the small gauge icon in the lower right corner to open the settings dialogue
         - paste in your API key and space ID
         - click connect and / or save the deeplink for your convenience
         - enjoy

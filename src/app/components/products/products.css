@@ -1,10 +1,11 @@
 .thumbnail img {
-  width: 100%;
+    width: 100%;
 }
 
 p {
-  text-align: right;
+    text-align: right;
 }
+
 p > span {
-  margin-left: 5px;
+    margin-left: 5px;
 }

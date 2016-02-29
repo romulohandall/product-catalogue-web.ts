@@ -1,68 +1,60 @@
 <div>
-
-  <div *ngIf="product!=undefined&&images!=undefined">
-
-    <!--<img src="{{product.fields.image[0].fields.file.url}}?w=300">-->
-
-    <!--<h3>{{product.fields.productName}}</h3>-->
-    <!--<p>{{product.fields.productDescription}}</p>-->
-
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-
-      <ol class="carousel-indicators {{images.length == 1 ? 'hidden' : ''}}">
-        <li *ngFor="#image of images; #i = index" data-target="#carousel-example-generic" attr.data-slide-to="{{i}}"
-            [ngClass]="{active: i == 0}">
-        </li>
-      </ol>
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <div *ngFor="#image of images; #i = index" class="item" [ngClass]="{active: i == 0}">
-          <img src="{{image.fields.file.url}}?w=400&h=400&fit=pad" alt="">
-          <div class="carousel-caption">
-          </div>
+    <div *ngIf="product!=undefined&&images!=undefined">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators {{images.length == 1 ? 'hidden' : ''}}">
+                <li *ngFor="#image of images; #i = index" data-target="#carousel-example-generic"
+                    attr.data-slide-to="{{i}}"
+                    [ngClass]="{active: i == 0}">
+                </li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div *ngFor="#image of images; #i = index" class="item" [ngClass]="{active: i == 0}">
+                    <img src="{{image.fields.file.url}}?w=400&h=400&fit=pad" alt="">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+            </div>
+            <!-- Controls -->
+            <a class="left carousel-control {{images.length == 1 ? 'hidden' : ''}}" href="#carousel-example-generic"
+               role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control {{images.length == 1 ? 'hidden' : ''}}" href="#carousel-example-generic"
+               role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-      </div>
 
-      <!-- Controls -->
-      <a class="left carousel-control {{images.length == 1 ? 'hidden' : ''}}" href="#carousel-example-generic"
-         role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control {{images.length == 1 ? 'hidden' : ''}}" href="#carousel-example-generic"
-         role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+        <h3>{{product.fields.productName}}</h3>
+        <h4>by <a href="{{product.fields.brand.fields.website}}">{{product.fields.brand.fields.companyName}}</a></h4>
+
+        <p class="pull-left">{{product.fields.price}} EUR</p>
+        <p class="pull-right text-muted">{{product.fields.quantity}} items in stock</p>
+        <div class="clearfix"></div>
+
+        <p>{{product.fields.productDescription}}</p>
+
+        <p>
+            <a href="{{product.fields.website}}" class="btn btn-info">View on the web</a>
+        </p>
+
+        <dl class="">
+            <dt>Dimensions</dt>
+            <dd>{{product.fields.sizetypecolor}}</dd>
+
+            <dt>Tags</dt>
+            <dd><span *ngFor="#tag of product.fields.tags; #l = last">{{tag}}{{!l ? ', ' : ''}}</span></dd>
+        </dl>
+
+
     </div>
-
-    <h3>{{product.fields.productName}}</h3>
-    <h4>by <a href="{{product.fields.brand.fields.website}}">{{product.fields.brand.fields.companyName}}</a></h4>
-
-    <p class="pull-left">{{product.fields.price}} EUR</p>
-    <p class="pull-right text-muted">{{product.fields.quantity}} items in stock</p>
-    <div class="clearfix"></div>
-
-    <p>{{product.fields.productDescription}}</p>
-
-    <p>
-      <a href="{{product.fields.website}}" class="btn btn-info">View on the web</a>
-    </p>
-
-    <dl class="">
-      <dt>Dimensions</dt>
-      <dd>{{product.fields.sizetypecolor}}</dd>
-
-      <dt>Tags</dt>
-      <dd><span *ngFor="#tag of product.fields.tags; #l = last">{{tag}}{{!l ? ', ' : ''}}</span></dd>
-    </dl>
-
-
-  </div>
-  <div *ngIf="product==undefined">
-    <span>No product found.</span>
-  </div>
+    <div *ngIf="product==undefined">
+        <span>No product found.</span>
+    </div>
 
 
 </div>

@@ -13,15 +13,10 @@ import {ContentfulService} from '../../services/contentful-service';
 export class ProductDetail {
   product:any;
   images:any;
-
   constructor(routeParams:RouteParams, contentfulService:ContentfulService) {
-    console.log('route param:', routeParams.get('productId'));
-    let that = this;
-    contentfulService.getProduct(routeParams.get('productId')).then(function (entries) {
-
-      that.product = entries[0];
-      that.images = entries[0].fields.image;
-      console.log("product-detail.ts",that.product)
+    contentfulService.getProduct(routeParams.get('productId')).then(entries => {
+      this.product = entries[0];
+      this.images = entries[0].fields.image;
     });
   }
 }

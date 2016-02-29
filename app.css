@@ -26,6 +26,15 @@ body {
     font-style: normal;
 }
 
+.container-fluid {
+    margin: 10px;
+}
+
+.container-outer {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 .glyphicon.spinning {
     animation: spin 1s infinite linear;
     -webkit-animation: spin2 1s infinite linear;
@@ -47,14 +56,4 @@ body {
     to {
         -webkit-transform: rotate(360deg);
     }
-}
-
-.container-fluid {
-
-    margin: 10px;
-}
-
-.container-outer {
-    max-width: 900px;
-    margin: 0 auto;
 }

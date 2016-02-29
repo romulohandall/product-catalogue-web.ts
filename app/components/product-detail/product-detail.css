@@ -1,27 +1,29 @@
 .item img {
-  width: 400px;
-  height: 400px;
-  margin: 0 auto;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
 }
 
 .btn {
-  width: 100%;
+    width: 100%;
 }
 
 .price {
-  float:left;
+    float: left;
 }
+
 .in-stock {
-  width: 100%;
-  text-align: right;
+    width: 100%;
+    text-align: right;
 }
 
 .carousel-control {
-  background-image: none;
-  color: black;
+    background-image: none;
+    color: black;
 }
+
 .carousel-indicators > li {
-  background-color: black;
-  color: black;
+    background-color: black;
+    color: black;
 }
 

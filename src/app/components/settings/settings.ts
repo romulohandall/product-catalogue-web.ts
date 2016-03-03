@@ -43,7 +43,7 @@ export class Settings {
             spaceId: [this.model.spaceId, Validators.compose([Validators.required, this.spaceIdValidator])]
         });
 
-        this.urlDeepBase = window.location.host + '/settings?';
+        this.urlDeepBase = window.location.host + '/product-catalogue-web.ts/settings?';
 
     }
 

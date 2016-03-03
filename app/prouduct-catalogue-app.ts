@@ -17,12 +17,12 @@ import {ContentfulService} from './services/contentful-service';
     pipes: []
 })
 @RouteConfig([
-    new Route({path: '/products', component: Products, name: 'Products', useAsDefault: true}),
-    new Route({path: '/products/:categoryId', component: Products, name: 'ProductsByCategory'}),
-    new Route({path: '/productdetail/:productId', component: ProductDetail, name: 'ProductDetail'}),
-    new Route({path: '/categories', component: Categories, name: 'Categories'}),
-    new Route({path: '/about', component: About, name: 'About'}),
-    new Route({path: '/settings', component: Settings, name: 'Settings'})
+    new Route({path: '/product-catalogue-web.ts/products', component: Products, name: 'Products', useAsDefault: true}),
+    new Route({path: '/product-catalogue-web.ts/products/:categoryId', component: Products, name: 'ProductsByCategory'}),
+    new Route({path: '/product-catalogue-web.ts/productdetail/:productId', component: ProductDetail, name: 'ProductDetail'}),
+    new Route({path: '/product-catalogue-web.ts/categories', component: Categories, name: 'Categories'}),
+    new Route({path: '/product-catalogue-web.ts/about', component: About, name: 'About'}),
+    new Route({path: '/product-catalogue-web.ts/settings', component: Settings, name: 'Settings'})
 ])
 export class ProuductCatalogueApp {
 

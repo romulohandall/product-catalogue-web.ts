@@ -7,6 +7,7 @@ module.exports = {
     'vendor': './src/vendor.ts'
   },
   output: {
+<<<<<<< HEAD
     path: "./src",
     filename: "bundle.js"
   },

@@ -4,7 +4,7 @@
   "description": "Simple we application to consume Contentful's product catalogue demo spaces.",
   "scripts": {
     "start": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 8080 --content-base src",
-    "deploy": "webpack -p --config webpack.production.config.js && find . -name '*.css' | cpio -pdm ../dist && find . -name '*.html' | cpio -pdm ../dist"
+    "deploy": "webpack -p --config webpack.production.config.js"
   },
   "keywords": [
     "contentful",

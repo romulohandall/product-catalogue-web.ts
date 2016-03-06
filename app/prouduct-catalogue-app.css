@@ -1,22 +1,3 @@
 .navbar-brand img {
     height: 100%;
 }
-
-.nav-settings {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    width: 14px;
-    height: 14px;
-}
-
-@media (max-width: 768px) {
-    .nav-settings {
-        left: 135px;
-        top: 27px;
-    }
-}
-
-.nav-settings a, .nav-settings a:visited, .nav-settings a:hover {
-    color: #333;
-}

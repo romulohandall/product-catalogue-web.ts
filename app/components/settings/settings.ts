@@ -4,6 +4,7 @@ import {Validators, ControlGroup, FormBuilder} from 'angular2/common';
 
 import {ContentfulService} from '../../services/contentful-service';
 import {SettingsModel} from './settings-model';
+import {Config} from '../../config';
 
 @Component({
     selector: 'settings',
@@ -11,7 +12,7 @@ import {SettingsModel} from './settings-model';
     styleUrls: ['app/components/settings/settings.css'],
     providers: [FormBuilder],
     directives: [],
-    pipes: []
+    pipes: [],
 })
 
 export class Settings {
@@ -40,10 +41,10 @@ export class Settings {
         // Custom validation for apiKey and spaceID.
         this.myForm = formBuilder.group({
             apiKey: [this.model.apiKey, Validators.compose([Validators.required, this.apiKeyValidator])],
-            spaceId: [this.model.spaceId, Validators.compose([Validators.required, this.spaceIdValidator])]
+            spaceId: [this.model.spaceId, Validators.compose([Validators.required, this.spaceIdValidator])],
         });
 
-        this.urlDeepBase = window.location.origin + '/product-catalogue-web.ts/#/settings?';
+        this.urlDeepBase = window.location.origin + Config.URL_BASE_PATH + Config.URL_SETTINGS_DEEPLINK;
 
     }
 
@@ -60,7 +61,7 @@ export class Settings {
     }
 
     public rebootApp() {
-        window.location.href = window.location.origin + '/product-catalogue-web.ts/';
+        window.location.href = window.location.origin + Config.URL_BASE_PATH;
     }
 
     private spaceIdValidator(id) {
@@ -78,6 +79,4 @@ export class Settings {
         }
         return {'invalidApiKey': true};
     }
-
-
 }

@@ -1,72 +1,69 @@
 <h3>Settings</h3>
 <form #configForm="ngForm" [ngFormModel]="myForm">
-  <p>
-    This demo application is connected to a read-only demo space. Use the form below
-    to connect to your own space. The space needs to be created implementing the
-    product catalogue data template from Contentful to function propperly.
-  </p>
-  <p>Once a valid space id and api for the deliver api is provided, the credentials need to
-    be saved in the current browser tab session. For convenience a deeplink to the settings dialogue
-    can be created.
-  </p>
+    <p>
+        This demo application is connected to a read-only demo space. Use the form below
+        to connect to your own space. The space needs to be created implementing the
+        product catalogue data template from Contentful to function propperly.
+    </p>
+    <p>Once a valid space id and api for the deliver api is provided, the credentials need to
+        be saved in the current browser tab session. For convenience a deeplink to the settings dialogue
+        can be created.
+    </p>
 
 
-  <div class="form-group" *ngIf="!contentfulService.isUserSessionStored">
-    <label for="spaceId">Space ID</label>
-    <input type="text"
-           class="form-control"
-           id="spaceId"
-           value="{{model.spaceId}}"
-           [(ngModel)]="model.spaceId"
-           ngControl="spaceId"
-           #spaceId="ngForm"
-           [disabled]="contentfulService.isUserSessionStored">
-    <p class="error" *ngIf="!spaceId.valid&&spaceId.dirty">12 alpha-numeric characters required</p>
-  </div>
-
-
-  <div class="form-group" *ngIf="!contentfulService.isUserSessionStored">
-    <label for="apiKey">API keyID</label>
-    <input type="text"
-           class="form-control"
-           id="apiKey"
-           value="{{model.apiKey}}"
-           [(ngModel)]="model.apiKey"
-           ngControl="apiKey"
-           #apiKey="ngForm"
-           [disabled]="contentfulService.isUserSessionStored">
-    <p class="error" *ngIf="!apiKey.valid && apiKey.dirty">64 alpha-numeric characters required</p>
-  </div>
-
-
-  <div *ngIf="contentfulService.isUserSessionStored">
-    <label for="apiKey"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> Deeplink for this sessions</label>
-    <div class="panel panel-default">
-      <div class="panel-body">
-
-
-
-          <a target="_blank" href="{{urlDeepBase}}apiKey={{model.apiKey}}&spaceId={{model.spaceId}}">{{urlDeepBase}}apiKey={{model.apiKey}}&spaceId={{model.spaceId}}</a>
-
-      </div>
+    <div class="form-group" *ngIf="!contentfulService.isUserSessionStored">
+        <label for="spaceId">Space ID</label>
+        <input type="text"
+               class="form-control"
+               id="spaceId"
+               value="{{model.spaceId}}"
+               [(ngModel)]="model.spaceId"
+               ngControl="spaceId"
+               #spaceId="ngForm"
+               [disabled]="contentfulService.isUserSessionStored">
+        <p class="error" *ngIf="!spaceId.valid&&spaceId.dirty">12 alpha-numeric characters required</p>
     </div>
-  </div>
 
 
-  <button type="button" (click)="saveSession()" [disabled]="contentfulService.isUserSessionStored || !myForm.valid"
-          class="btn btn-default">
-    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Save Session
-  </button>
+    <div class="form-group" *ngIf="!contentfulService.isUserSessionStored">
+        <label for="apiKey">API keyID</label>
+        <input type="text"
+               class="form-control"
+               id="apiKey"
+               value="{{model.apiKey}}"
+               [(ngModel)]="model.apiKey"
+               ngControl="apiKey"
+               #apiKey="ngForm"
+               [disabled]="contentfulService.isUserSessionStored">
+        <p class="error" *ngIf="!apiKey.valid && apiKey.dirty">64 alpha-numeric characters required</p>
+    </div>
 
-  <button type="button" (click)="removeSession()" [disabled]="!contentfulService.isUserSessionStored"
-          class="btn btn-default">
-    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Remove Session
-  </button>
 
-  <button type="button" (click)="rebootApp()" *ngIf="contentfulService.isUserSessionStored"
-          class="btn btn-default  pull-right">
-    <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Restart App
-  </button>
+    <div *ngIf="contentfulService.isUserSessionStored">
+        <label for="apiKey"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> Deeplink for this
+            sessions</label>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <a target="_blank" href="{{urlDeepBase}}apiKey={{model.apiKey}}&spaceId={{model.spaceId}}">{{urlDeepBase}}apiKey={{model.apiKey}}&spaceId={{model.spaceId}}</a>
+            </div>
+        </div>
+    </div>
+
+
+    <button type="button" (click)="saveSession()" [disabled]="contentfulService.isUserSessionStored || !myForm.valid"
+            class="btn btn-default">
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Save Session
+    </button>
+
+    <button type="button" (click)="removeSession()" [disabled]="!contentfulService.isUserSessionStored"
+            class="btn btn-default">
+        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Remove Session
+    </button>
+
+    <button type="button" (click)="rebootApp()"
+            class="btn btn-default  pull-right">
+        <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Restart App
+    </button>
 
 
 </form>

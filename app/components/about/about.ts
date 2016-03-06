@@ -9,7 +9,4 @@ import {Component} from 'angular2/core';
     pipes: [],
 })
 
-export class About {
-    constructor() {
-    }
-}
+export class About {}

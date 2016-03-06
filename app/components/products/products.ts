@@ -8,7 +8,7 @@ import {ContentfulService} from '../../services/contentful-service';
     styleUrls: ['app/components/products/products.css'],
     providers: [],
     directives: [ROUTER_DIRECTIVES],
-    pipes: []
+    pipes: [],
 })
 export class Products {
     public products:Promise<any>;

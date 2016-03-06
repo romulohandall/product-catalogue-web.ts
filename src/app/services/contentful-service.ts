@@ -1,3 +1,4 @@
+import {Config} from '../config';
 /**
  * ContentfulService is using the Contentful JS SDK to load data from contentful.
  * As the actual content of this demos is limited in size, the service loads all
@@ -7,7 +8,7 @@
  */
 
 // Require Contentful's JS SDK for delivery.
-var contentful = require('contentful');
+let contentful = require('contentful');
 
 import {Injectable} from 'angular2/core';
 import {ContentfulModel} from './contentful-model';
@@ -15,15 +16,12 @@ import {ContentfulModel} from './contentful-model';
 @Injectable()
 export class ContentfulService {
 
-    public static SESSION_STORAGE_APIKEY:string = 'cfApiKey';
-
-    public static SESSION_STORAGE_SPACEID:string = 'cfSpaceId';
 
     public isUserSessionStored = false;
 
     public isUserSpaceLoaded = false;
 
-    public model:ContentfulModel = new ContentfulModel();
+    public model:ContentfulModel;
 
     private sdkClient;
 
@@ -31,14 +29,79 @@ export class ContentfulService {
 
     constructor() {
 
+        this.model = new ContentfulModel(Config.SPACE_ID, Config.API_KEY, Config.PRODUCT_CONTENT_TYPE_ID, Config.CATEGORY_CONTENT_TYPE_ID);
+
         this.connect();
+    }
+
+
+
+    public getSpace() {
+        return this.sdkClient.space();
+    }
+
+    public getProducts(categoryId:string = null) {
+        // Maintain scope in promises.
+        return this.entriesPromise.then((entries:any[]) => {
+            // Filter all entries.
+            return entries.filter(
+                (entry:any) => {
+                    // Filter by category if applicable.
+                    if (categoryId != null) {
+                        let categoryMatch;
+                        for (let i in entry.fields.categories) {
+                            if (entry.fields.categories[i].sys.id === categoryId) {
+                                categoryMatch = true;
+                                continue;
+                            }
+                        }
+                        return entry.sys.contentType.sys.id === this.model.productContentType &&
+                            categoryMatch;
+                        // Or filter by products.
+                    } else {
+                        return entry.sys.contentType.sys.id === this.model.productContentType;
+                    }
+                }
+            );
+        });
+    }
+
+    public getProduct(productId:string = null) {
+        return this.entriesPromise.then((entries:any[]) => {
+            return entries.filter((entry:any) => {
+                return entry.sys.id === productId;
+            });
+        });
+    }
+
+    public getCategories() {
+        let categoryContentType = this.model.categoryContentType;
+        return this.entriesPromise.then((entries:any[]) => {
+            return entries.filter((entry:any) => {
+                return entry.sys.contentType.sys.id === categoryContentType;
+            });
+        });
+    }
+
+    public setSessionCredentials(apiKey:string, spaceId:string):void {
+        console.log('setSessionCredentials\n', 'spaceId: ' + spaceId + '\n', 'apiKey: ' + apiKey + '\n');
+        this.isUserSessionStored = true;
+        sessionStorage.setItem(Config.SESSION_STORAGE_API_KEY, apiKey);
+        sessionStorage.setItem(Config.SESSION_STORAGE_SPACE_ID, spaceId);
+    }
+
+    public clearSessionCredentials():void {
+        console.log('removeSessionCredentials');
+        this.isUserSessionStored = false;
+        sessionStorage.removeItem(Config.SESSION_STORAGE_API_KEY);
+        sessionStorage.removeItem(Config.SESSION_STORAGE_SPACE_ID);
     }
 
     private connect() {
 
         // Bootstrap from user session if present.
-        let spaceId = sessionStorage.getItem(ContentfulService.SESSION_STORAGE_SPACEID);
-        let apiKey = sessionStorage.getItem(ContentfulService.SESSION_STORAGE_APIKEY);
+        let spaceId = sessionStorage.getItem(Config.SESSION_STORAGE_SPACE_ID);
+        let apiKey = sessionStorage.getItem(Config.SESSION_STORAGE_API_KEY);
 
         if (spaceId && apiKey) {
 
@@ -53,7 +116,7 @@ export class ContentfulService {
 
         this.sdkClient = contentful.createClient({
             space: this.model.spaceId,
-            accessToken: this.model.apiKey
+            accessToken: this.model.apiKey,
         });
 
         this.entriesPromise = this.sdkClient.entries().then(function (data) {
@@ -62,67 +125,5 @@ export class ContentfulService {
             console.error('Could not connect to space:', this.model.spaceId);
             console.log(reason);
         });
-    }
-
-    getSpace() {
-        return this.sdkClient.space();
-    }
-
-    getProducts(categoryId:string = null) {
-        // Maintain scope in promises.
-        //let productContentType = this.model.productContentType;
-        return this.entriesPromise.then((entries) => {
-            // Filter all entries.
-            return entries.filter(
-                (entry) => {
-                    // Filter by category if applicable.
-                    if (categoryId != null) {
-                        let categoryMatch;
-                        for (let i in entry.fields.categories) {
-                            if (entry.fields.categories[i].sys.id == categoryId) {
-                                categoryMatch = true;
-                                continue;
-                            }
-                        }
-                        return entry.sys.contentType.sys.id == this.model.productContentType &&
-                            categoryMatch;
-                        // Or filter by products.
-                    } else {
-                        return entry.sys.contentType.sys.id == this.model.productContentType;
-                    }
-                }
-            )
-        });
-    }
-
-    getProduct(productId:string = null) {
-        return this.entriesPromise.then((entries:any[]) => {
-            return entries.filter((entry:any) => {
-                return entry.sys.id == productId;
-            })
-        });
-    }
-
-    getCategories() {
-        let categoryContentType = this.model.categoryContentType;
-        return this.entriesPromise.then((entries:any[]) => {
-            return entries.filter((entry:any) => {
-                return entry.sys.contentType.sys.id == categoryContentType;
-            })
-        });
-    }
-
-    setSessionCredentials(apiKey:string, spaceId:string):void {
-        console.log('setSessionCredentials\n', 'spaceId: ' + spaceId + '\n', 'apiKey: ' + apiKey + '\n');
-        this.isUserSessionStored = true;
-        sessionStorage.setItem(ContentfulService.SESSION_STORAGE_APIKEY, apiKey);
-        sessionStorage.setItem(ContentfulService.SESSION_STORAGE_SPACEID, spaceId);
-    }
-
-    clearSessionCredentials():void {
-        console.log('removeSessionCredentials');
-        this.isUserSessionStored = false;
-        sessionStorage.removeItem(ContentfulService.SESSION_STORAGE_APIKEY);
-        sessionStorage.removeItem(ContentfulService.SESSION_STORAGE_SPACEID);
     }
 }

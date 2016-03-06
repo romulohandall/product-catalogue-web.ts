@@ -14,7 +14,7 @@ import {ContentfulService} from './services/contentful-service';
     templateUrl: 'app/prouduct-catalogue-app.html',
     styleUrls: ['app/prouduct-catalogue-app.css'],
     directives: [ROUTER_DIRECTIVES],
-    pipes: []
+    pipes: [],
 })
 @RouteConfig([
     new Route({path: '/products', component: Products, name: 'Products', useAsDefault: true}),
@@ -22,9 +22,9 @@ import {ContentfulService} from './services/contentful-service';
     new Route({path: '/productdetail/:productId', component: ProductDetail, name: 'ProductDetail'}),
     new Route({path: '/categories', component: Categories, name: 'Categories'}),
     new Route({path: '/about', component: About, name: 'About'}),
-    new Route({path: '/settings', component: Settings, name: 'Settings'})
+    new Route({path: '/settings', component: Settings, name: 'Settings'}),
 ])
-export class ProuductCatalogueApp {
+export class ProductCatalogueApp {
 
     public spaceName:Promise<string>;
 
@@ -35,8 +35,7 @@ export class ProuductCatalogueApp {
         });
     }
 
-    isActive(viewLocation) {
+    public isRouteActive(viewLocation) {
         return viewLocation === this.location.path().split('/')[1];
     }
-
 }

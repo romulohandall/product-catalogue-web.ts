@@ -8,13 +8,13 @@ import {ContentfulService} from '../../services/contentful-service';
   styleUrls: ['app/components/product-detail/product-detail.css'],
   providers: [],
   directives: [ROUTER_DIRECTIVES],
-  pipes: []
+  pipes: [],
 })
 export class ProductDetail {
   public product;
   public images;
   constructor(routeParams:RouteParams, contentfulService:ContentfulService) {
-    contentfulService.getProduct(routeParams.get('productId')).then(entries => {
+    contentfulService.getProduct(routeParams.get('productId')).then((entries:any[]) => {
       this.product = entries[0];
       this.images = entries[0].fields.image;
     });

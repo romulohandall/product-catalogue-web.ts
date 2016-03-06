@@ -18,7 +18,10 @@ module.exports = {
       compress: {
         warnings: false
       }
-    })
+    }),
+    new webpack.DefinePlugin({
+      PROD: true,
+    }),
   ],
   resolve: {
     extensions: ['', '.ts', '.js', '.html', '.css']

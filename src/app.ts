@@ -4,10 +4,11 @@ import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2
 import {enableProdMode, provide} from 'angular2/core';
 
 import {ContentfulService} from './app/services/contentful-service';
-import {ProuductCatalogueApp} from './app/prouduct-catalogue-app';
+import {ProductCatalogueApp} from './app/prouduct-catalogue-app';
 
 enableProdMode();
 
-bootstrap(ProuductCatalogueApp,
-    [HTTP_PROVIDERS, ROUTER_PROVIDERS, provide(LocationStrategy, {useClass: HashLocationStrategy}), ContentfulService,])
+bootstrap(ProductCatalogueApp,
+    [HTTP_PROVIDERS, ROUTER_PROVIDERS, provide(LocationStrategy, {useClass: HashLocationStrategy}), ContentfulService])
     .catch(err => console.error(err));
+

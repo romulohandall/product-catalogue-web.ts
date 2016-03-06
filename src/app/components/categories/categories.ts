@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
+import {ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {ContentfulService} from '../../services/contentful-service';
 
@@ -9,7 +9,7 @@ import {ContentfulService} from '../../services/contentful-service';
     styleUrls: ['app/components/categories/categories.css'],
     providers: [],
     directives: [ROUTER_DIRECTIVES],
-    pipes: []
+    pipes: [],
 })
 
 export class Categories {

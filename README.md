@@ -56,4 +56,4 @@ This is a project created for demo purposes and not officially supported. Report
  [4]: https://github.com/contentful/product-catalogue-android
  [5]: https://www.contentful.com/blog/2015/01/30/introducing-space-templates/
  [6]: https://app.contentful.com
- [7]: https://contentful-labs.github.com/product-catalogue.ts
+ [7]: https://contentful-labs.github.com/product-catalogue-web.ts

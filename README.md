@@ -1,8 +1,8 @@
-# Product Catalogue Web
+# Product catalogue web application
 
-This is an example application built in Angular2/Typescript. In the default setup the app consumes Contentful's read-only [Product Catalogue Space Template][5] which is also consumed by our example applications available for [iOS][3] and [Android][4].
+This is an example application built in Angular2/Typescript. In the default setup the app gets content from the Contentful read-only [Product Catalogue Space Template][5]. Our example applications for [iOS][3] and [Android][4] happen to use the same space template as well.
 
-### What is Contentful?
+### What is Contentful
 [Contentful][1] is a content management platform for web applications, mobile apps and connected devices. It allows you to create, edit & manage content in the cloud and publish it anywhere via powerful API. Contentful offers tools for managing editorial teams and enabling cooperation between organizations.
 
 ![Screenshots of Product Catalogue Web demo App](./src/images/product-catalogue-web-spash.png?raw=true "Screenshots")
@@ -10,17 +10,17 @@ This is an example application built in Angular2/Typescript. In the default setu
 
 
 ## Live Demo
-The real benefit of the app is the capability to connect it to any space which uses the [Product Catalogue Space Template][5]. Once the app is connected to a user controlled version of the [Product Catalogue Space Template][5], all changes to the space in [Contentful's UI][6] will be reflected in the app.
+The real benefit of the app is the capability to connect it to any space which uses the [Product Catalogue Space Template][5]. Once the app is connected to a user-controlled version of the [Product Catalogue Space Template][5], all changes to the space in [the Contentful UI][6] will be reflected in the app.
 
 1. Prepare a Contentful demo space
-    - create a new space in https://app.contentful.com
+    - Create a new space in https://app.contentful.com
     - **IMPORTANT**: make sure to create it from the [Product Catalogue Space Template][5]
 2. Connect the space to the demo application
-    - open the hosted version of the demo application [https://contentful-labs.github.com/product-catalogue-web.ts][7]
-    - click settings from the menu
-    - paste in your API key and space ID
-    - click on "save session" and / or save the deeplink for your convenience
-    - **optional**: Bookmark the deeplink for easy coming back to your space
+    - Open the hosted version of the demo application [https://contentful-labs.github.com/product-catalogue-web.ts][7]
+    - Open settings
+    - Paste in your API key and space ID
+    - Save session and/or save the deep link for your convenience
+    - **Optional**: bookmark the deep link for later usage
 
 
 ![Screenshots of Product Catalogue Web demo App](./src/images/product-catalogue-web-editing.png?raw=true "Contentful in action")
@@ -36,7 +36,7 @@ The real benefit of the app is the capability to connect it to any space which u
 ###Links
 
 
-There is other implementations of the product catalogue demo available for iOS and Android 
+There are other implementations of the product catalogue demo available for iOS and Android 
 
 [Product Catalogue for iOS][3]
 [Product Catalogue for Andorid][4]

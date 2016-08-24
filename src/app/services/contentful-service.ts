@@ -116,8 +116,7 @@ export class ContentfulService {
 
         this.sdkClient = contentful.createClient({
             space: this.model.spaceId,
-            accessToken: this.model.apiKey,
-            host: 'preview.contentful.com' // hack
+            accessToken: this.model.apiKey
         });
 
         this.entriesPromise = this.sdkClient.entries().then(function (data) {

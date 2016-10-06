@@ -2,12 +2,13 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
+  context: path.join(__dirname, 'src'),
   entry: {
-    'app': './src/app.ts',
-    'vendor': './src/vendor.ts'
+    'app': './app.ts',
+    'vendor': './vendor.ts'
   },
   output: {
-    path: "./src",
+    path: path.join(__dirname, 'src'),
     filename: "bundle.js"
   },
   plugins: [
@@ -15,7 +16,7 @@ module.exports = {
     new webpack.optimize.DedupePlugin(),
     new webpack.DefinePlugin({
       PROD: false,
-    }),
+    })
   ],
   devtool: 'source-map',
   resolve: {

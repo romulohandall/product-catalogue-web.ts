@@ -5,8 +5,8 @@ import {ContentfulService} from '../../services/contentful-service';
 
 @Component({
     selector: 'categories',
-    templateUrl: 'app/components/categories/categories.html',
-    styleUrls: ['app/components/categories/categories.css'],
+    templateUrl: '/app/components/categories/categories.html',
+    styleUrls: ['/app/components/categories/categories.css'],
     providers: [],
     directives: [ROUTER_DIRECTIVES],
     pipes: [],

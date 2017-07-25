@@ -4,8 +4,8 @@ import {ContentfulService} from '../../services/contentful-service';
 
 @Component({
   selector: 'product-detail',
-  templateUrl: '/app/components/product-detail/product-detail.html',
-  styleUrls: ['/app/components/product-detail/product-detail.css'],
+  templateUrl: 'app/components/product-detail/product-detail.html',
+  styleUrls: ['app/components/product-detail/product-detail.css'],
   providers: [],
   directives: [ROUTER_DIRECTIVES],
   pipes: [],

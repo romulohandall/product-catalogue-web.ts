@@ -11,8 +11,8 @@ import {ContentfulService} from './services/contentful-service';
 @Component({
     selector: 'prouduct-catalogue-app',
     providers: [],
-    templateUrl: '/app/prouduct-catalogue-app.html',
-    styleUrls: ['/app/prouduct-catalogue-app.css'],
+    templateUrl: 'app/prouduct-catalogue-app.html',
+    styleUrls: ['app/prouduct-catalogue-app.css'],
     directives: [ROUTER_DIRECTIVES],
     pipes: [],
 })

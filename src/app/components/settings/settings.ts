@@ -8,8 +8,8 @@ import {Config} from '../../config';
 
 @Component({
     selector: 'settings',
-    templateUrl: '/app/components/settings/settings.html',
-    styleUrls: ['/app/components/settings/settings.css'],
+    templateUrl: 'app/components/settings/settings.html',
+    styleUrls: ['app/components/settings/settings.css'],
     providers: [FormBuilder],
     directives: [],
     pipes: [],

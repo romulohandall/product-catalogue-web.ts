@@ -12,17 +12,19 @@ This repository is the base for the [Using Contentful in an Angular project](htt
 
 ## Live Demo
 
-The real benefit of the app is the capability to connect it to any space which uses the [Product Catalogue Space Template][https://www.contentful.com/blog/2015/01/30/introducing-space-templates/]. Once the app is connected to a user-controlled version of the [Product Catalogue Space Template][https://www.contentful.com/blog/2015/01/30/introducing-space-templates/], all changes to the space in [the Contentful UI][https://app.contentful.com] will be reflected in the app.
+The real benefit of the app is the capability to connect it to any space which uses the [Product Catalogue Space Template](https://www.contentful.com/blog/2015/01/30/introducing-space-templates/). Once the app is connected to a user-controlled version of the [Product Catalogue Space Template](https://www.contentful.com/blog/2015/01/30/introducing-space-templates/), all changes to the space in [the Contentful UI](https://app.contentful.com) will be reflected in the app.
 
 1. Prepare a Contentful demo space
     - Create a new space in https://app.contentful.com
-    - **IMPORTANT**: make sure to create it from the [Product Catalogue Space Template][https://www.contentful.com/blog/2015/01/30/introducing-space-templates/]
+    - **IMPORTANT**: make sure to create it from the [Product Catalogue Space Template](https://www.contentful.com/blog/2015/01/30/introducing-space-templates/)
 2. Connect the space to the demo application
-    - Open the hosted version of the demo application [https://contentful-labs.github.com/product-catalogue-web.ts][https://contentful-labs.github.com/product-catalogue-web.ts]
+    - Open the hosted version of the demo application [https://contentful-labs.github.com/product-catalogue-web.ts](https://contentful-labs.github.com/product-catalogue-web.ts)
     - Open settings
     - Paste in your API key and space ID
     - Save session and/or save the deep link for your convenience
     - **Optional**: bookmark the deep link for later usage
+
+## Getting started
 
 - Clone or fork this repository
 - run `npm install` to install dependencies

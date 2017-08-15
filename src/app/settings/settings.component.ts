@@ -47,7 +47,7 @@ export class SettingsComponent implements OnInit {
 
     if (!this.errorMessages.space && !this.errorMessages.accessToken) {
       this.ContentfulService.setConfig(this.config);
-      this.deepLink = `https://contentful-labs.github.com/product-catalogue-web.ts/#/settings?spaceId=${this.config.space}&apiKey=${this.config.accessToken}`;
+      this.deepLink = `${window.location.href}?spaceId=${this.config.space}&apiKey=${this.config.accessToken}`;
     }
   }
 

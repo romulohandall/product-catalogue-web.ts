@@ -12,3 +12,8 @@
   margin: 0 auto;
   padding: 1em;
 }
+
+.app-title {
+  margin-left: auto;
+  font-size: .8em;
+}

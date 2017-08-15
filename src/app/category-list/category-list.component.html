@@ -3,6 +3,7 @@
     <li *ngFor="let category of categories">
       <md-card class="category-card">
         <md-card-header>
+          <img *ngIf="category.fields.icon" class="category-image" src="{{ category.fields.icon.fields.file.url }}">
           <md-card-title>{{ category.fields.title }}</md-card-title>
           <md-card-subtitle>{{ category.fields.categoryDescription }}</md-card-subtitle>
         </md-card-header>

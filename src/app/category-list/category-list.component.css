@@ -15,3 +15,10 @@
 .category-card {
   height: 100%;
 }
+
+.category-image {
+  width: 3em;
+  height: 3em;
+
+  margin-left: auto;
+}

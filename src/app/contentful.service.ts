@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { createClient, Entry, ContentfulClientApi } from 'contentful';
+import { createClient, Entry, Space, ContentfulClientApi } from 'contentful';
 
 // change these to include your own settings
 const DEFAULT_CONFIG = {
@@ -21,6 +21,7 @@ export class ContentfulService {
     space: string,
     accessToken: string
   };
+  titleHandlers: Function[]
 
   constructor() {
     try {
@@ -29,7 +30,23 @@ export class ContentfulService {
       this.config = DEFAULT_CONFIG.credentials;
     }
 
+    this.titleHandlers = [];
     this._createClient();
+    this.getSpace();
+  }
+
+  onTitleChange(fn): void {
+    this.titleHandlers.push(fn)
+  }
+
+  // get the current space
+  getSpace(): Promise<Space> {
+    return this.cdaClient.getSpace()
+      .then(space => {
+        this.titleHandlers.forEach(handler => handler(space.name))
+
+        return space;
+      })
   }
 
   // fetch products
@@ -66,7 +83,9 @@ export class ContentfulService {
   setConfig(config: {space: string, accessToken: string}) {
     localStorage.setItem('catalogConfig', JSON.stringify(config));
     this.config = config;
+
     this._createClient();
+    this.getSpace();
 
     return Object.assign({}, this.config);
   }
@@ -75,7 +94,9 @@ export class ContentfulService {
   resetConfig() {
     localStorage.removeItem('catalogConfig');
     this.config = DEFAULT_CONFIG.credentials;
+
     this._createClient();
+    this.getSpace();
 
     return Object.assign({}, this.config);
   }

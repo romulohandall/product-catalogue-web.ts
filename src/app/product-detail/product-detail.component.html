@@ -6,7 +6,7 @@
     </md-card-header>
     <md-card-content>
       <md-tab-group>
-        <md-tab label="Image">
+        <md-tab *ngIf="product.fields.image" label="Image">
           <div class="tab-container">
             <img class="u-marginAutoHorizontal" src="{{ product.fields.image[0].fields.file.url }}">
             <p>{{ product.fields.image[0].fields.description }}</p>
@@ -15,10 +15,10 @@
         <md-tab label="Description">
           <div class="tab-container">
             <p>{{ product.fields.productDescription }}</p>
-            <p>SKU: {{ product.fields.sku }}</p>
+            <p>SKU: {{ product.fields.sku || 'SKU not available' }}</p>
           </div>
         </md-tab>
-        <md-tab label="Brand">
+        <md-tab *ngIf="product.fields.brand" label="Brand">
           <div class="tab-container">
             <div class="brand-panel">
               <div class="brand-panel-img">

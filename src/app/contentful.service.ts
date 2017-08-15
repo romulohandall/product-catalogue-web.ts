@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import { createClient, Entry } from 'contentful';
+import { createClient, Entry, ContentfulClientApi } from 'contentful';
 
 // change these to include your own settings
-const CONFIG = {
-  space: 'wl1z0pal05vy',
-  accessToken: '0e3ec801b5af550c8a1257e8623b1c77ac9b3d8fcfc1b2b7494e3cb77878f92a',
+const DEFAULT_CONFIG = {
+  credentials: {
+    space: 'wl1z0pal05vy',
+    accessToken: '0e3ec801b5af550c8a1257e8623b1c77ac9b3d8fcfc1b2b7494e3cb77878f92a',
+  },
 
   contentTypeIds: {
     product: '2PqfXUJwE8qSYKuM0U6w8M',
@@ -14,17 +16,26 @@ const CONFIG = {
 
 @Injectable()
 export class ContentfulService {
-  private cdaClient = createClient({
-    space: CONFIG.space,
-    accessToken: CONFIG.accessToken
-  });
+  cdaClient: ContentfulClientApi;
+  config: {
+    space: string,
+    accessToken: string
+  };
 
-  constructor() { }
+  constructor() {
+    try {
+      this.config = JSON.parse(localStorage.catalogConfig);
+    } catch (e) {
+      this.config = DEFAULT_CONFIG.credentials;
+    }
+
+    this._createClient();
+  }
 
   // fetch products
   getProducts(query?: object): Promise<Entry<any>[]> {
     return this.cdaClient.getEntries(Object.assign({
-      content_type: CONFIG.contentTypeIds.product
+      content_type: DEFAULT_CONFIG.contentTypeIds.product
     }, query))
     .then(res => res.items);
   }
@@ -42,5 +53,37 @@ export class ContentfulService {
       content_type: '6XwpTaSiiI2Ak2Ww0oi6qa'
     })
     .then(res => res.items);
+  }
+
+  // return a custom config if available
+  getConfig(): { space: string, accessToken: string } {
+    return this.config !== DEFAULT_CONFIG.credentials ?
+      Object.assign({}, this.config) :
+      { space: '', accessToken: '' };
+  }
+
+  // set a new config and store it in localStorage
+  setConfig(config: {space: string, accessToken: string}) {
+    localStorage.setItem('catalogConfig', JSON.stringify(config));
+    this.config = config;
+    this._createClient();
+
+    return Object.assign({}, this.config);
+  }
+
+  // set config back to default values
+  resetConfig() {
+    localStorage.removeItem('catalogConfig');
+    this.config = DEFAULT_CONFIG.credentials;
+    this._createClient();
+
+    return Object.assign({}, this.config);
+  }
+
+  _createClient() {
+    this.cdaClient = createClient({
+      space: this.config.space,
+      accessToken: this.config.accessToken
+    });
   }
 }

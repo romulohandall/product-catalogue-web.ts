@@ -1,10 +1,10 @@
-import { CfAngularTutorial2ndtryPage } from './app.po';
+import { CfAngularTutorialPage } from './app.po';
 
-describe('cf-angular-tutorial2ndtry App', () => {
-  let page: CfAngularTutorial2ndtryPage;
+describe('cf-angular-tutorial App', () => {
+  let page: CfAngularTutorialPage;
 
   beforeEach(() => {
-    page = new CfAngularTutorial2ndtryPage();
+    page = new CfAngularTutorialPage();
   });
 
   it('should display welcome message', () => {

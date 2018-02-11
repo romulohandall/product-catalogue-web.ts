@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 import { RouterModule, Routes }   from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdListModule, MdInputModule, MdToolbarModule, MdButtonModule, MdCardModule, MdTabsModule } from '@angular/material';
+import { MatListModule, MatInputModule, MatToolbarModule, MatButtonModule, MatCardModule, MatTabsModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -35,20 +35,20 @@ const routes: Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(routes, { useHash: true }),
     FormsModule,
-    MdListModule,
-    MdToolbarModule,
-    MdCardModule,
-    MdButtonModule,
-    MdTabsModule,
-    MdInputModule
+    MatListModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatButtonModule,
+    MatTabsModule,
+    MatInputModule
   ],
   exports: [
-    MdListModule,
-    MdToolbarModule,
-    MdCardModule,
-    MdButtonModule,
-    MdTabsModule,
-    MdInputModule
+    MatListModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatButtonModule,
+    MatTabsModule,
+    MatInputModule
   ],
   providers: [ContentfulService],
   bootstrap: [AppComponent]

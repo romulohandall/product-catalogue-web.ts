@@ -1,15 +1,19 @@
-webpackJsonp([1],{
+webpackJsonp(["main"],{
 
-/***/ "../../../../../src async recursive":
+/***/ "../../../../../src/$$_lazy_route_resource lazy recursive":
 /***/ (function(module, exports) {
 
-function webpackEmptyContext(req) {
-	throw new Error("Cannot find module '" + req + "'.");
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
 }
-webpackEmptyContext.keys = function() { return []; };
-webpackEmptyContext.resolve = webpackEmptyContext;
-module.exports = webpackEmptyContext;
-webpackEmptyContext.id = "../../../../../src async recursive";
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
@@ -34,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<md-toolbar>\n  <a href=\"https://www.contentful.com\">\n    <svg class=\"logo\" aria-label=\"Contentful Website\" width=\"29\" height=\"32\" viewBox=\"0 0 29 32\" xmlns=\"http://www.w3.org/2000/svg\"><title>contentful-dark-1a51a42b</title><g fill-rule=\"nonzero\" fill=\"none\"><path d=\"M9.7 22.3C8 20.7 7 18.5 7 16s1-4.7 2.6-6.3c1.4-1.4 1.4-3.6 0-5s-3.6-1.4-5 0C1.8 7.6 0 11.6 0 16s1.8 8.4 4.7 11.3c1.4 1.4 3.6 1.4 5 0 1.3-1.4 1.3-3.6 0-5z\" fill=\"#FAE501\"/><path d=\"M9.7 9.7C11.3 8 13.5 7 16 7s4.7 1 6.3 2.6c1.4 1.4 3.6 1.4 5 0s1.4-3.6 0-5C24.4 1.8 20.4 0 16 0S7.6 1.8 4.7 4.7c-1.4 1.4-1.4 3.6 0 5 1.4 1.3 3.6 1.3 5 0z\" fill=\"#4FB5E1\"/><path d=\"M22.3 22.3C20.7 24 18.5 25 16 25s-4.7-1-6.3-2.6c-1.4-1.4-3.6-1.4-5 0s-1.4 3.6 0 5C7.6 30.2 11.6 32 16 32s8.4-1.8 11.3-4.7c1.4-1.4 1.4-3.6 0-5-1.4-1.3-3.6-1.3-5 0z\" fill=\"#F05751\"/><circle fill=\"#0681B6\" cx=\"7.2\" cy=\"7.2\" r=\"3.5\"/><circle fill=\"#CD4739\" cx=\"7.2\" cy=\"24.8\" r=\"3.5\"/></g></svg>\n  </a>\n  <a md-button routerLink=\"/products\">\n    Products\n  </a>\n  <a md-button routerLink=\"/categories\">Categories</a>\n  <a md-button routerLink=\"/settings\">Settings</a>\n\n  <span class=\"app-title\">{{ title }}</span>\n</md-toolbar>\n\n<main class=\"container\">\n  <router-outlet></router-outlet>\n</main>\n"
+module.exports = "<mat-toolbar>\n  <a href=\"https://www.contentful.com\">\n    <svg class=\"logo\" aria-label=\"Contentful Website\" width=\"29\" height=\"32\" viewBox=\"0 0 29 32\" xmlns=\"http://www.w3.org/2000/svg\"><title>contentful-dark-1a51a42b</title><g fill-rule=\"nonzero\" fill=\"none\"><path d=\"M9.7 22.3C8 20.7 7 18.5 7 16s1-4.7 2.6-6.3c1.4-1.4 1.4-3.6 0-5s-3.6-1.4-5 0C1.8 7.6 0 11.6 0 16s1.8 8.4 4.7 11.3c1.4 1.4 3.6 1.4 5 0 1.3-1.4 1.3-3.6 0-5z\" fill=\"#FAE501\"/><path d=\"M9.7 9.7C11.3 8 13.5 7 16 7s4.7 1 6.3 2.6c1.4 1.4 3.6 1.4 5 0s1.4-3.6 0-5C24.4 1.8 20.4 0 16 0S7.6 1.8 4.7 4.7c-1.4 1.4-1.4 3.6 0 5 1.4 1.3 3.6 1.3 5 0z\" fill=\"#4FB5E1\"/><path d=\"M22.3 22.3C20.7 24 18.5 25 16 25s-4.7-1-6.3-2.6c-1.4-1.4-3.6-1.4-5 0s-1.4 3.6 0 5C7.6 30.2 11.6 32 16 32s8.4-1.8 11.3-4.7c1.4-1.4 1.4-3.6 0-5-1.4-1.3-3.6-1.3-5 0z\" fill=\"#F05751\"/><circle fill=\"#0681B6\" cx=\"7.2\" cy=\"7.2\" r=\"3.5\"/><circle fill=\"#CD4739\" cx=\"7.2\" cy=\"24.8\" r=\"3.5\"/></g></svg>\n  </a>\n  <a mat-button routerLink=\"/products\">\n    Products\n  </a>\n  <a mat-button routerLink=\"/categories\">Categories</a>\n  <a mat-button routerLink=\"/settings\">Settings</a>\n\n  <span class=\"app-title\">{{ title }}</span>\n</mat-toolbar>\n\n<main class=\"container\">\n  <router-outlet></router-outlet>\n</main>\n"
 
 /***/ }),
 
@@ -42,9 +46,9 @@ module.exports = "<md-toolbar>\n  <a href=\"https://www.contentful.com\">\n    <
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__contentful_service__ = __webpack_require__("../../../../../src/app/contentful.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__contentful_service__ = __webpack_require__("../../../../../src/app/contentful.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -64,19 +68,18 @@ var AppComponent = (function () {
         var _this = this;
         this.ContentfulService.onTitleChange(function (title) { return _this.title = title; });
     };
+    AppComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-root',
+            template: __webpack_require__("../../../../../src/app/app.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/app.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__contentful_service__["a" /* ContentfulService */]])
+    ], AppComponent);
     return AppComponent;
 }());
-AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'app-root',
-        template: __webpack_require__("../../../../../src/app/app.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/app.component.css")]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__contentful_service__["a" /* ContentfulService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__contentful_service__["a" /* ContentfulService */]) === "function" && _a || Object])
-], AppComponent);
 
-var _a;
-//# sourceMappingURL=app.component.js.map
+
 
 /***/ }),
 
@@ -84,19 +87,19 @@ var _a;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/esm5/animations.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__product_list_product_list_component__ = __webpack_require__("../../../../../src/app/product-list/product-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__product_detail_product_detail_component__ = __webpack_require__("../../../../../src/app/product-detail/product-detail.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__category_list_category_list_component__ = __webpack_require__("../../../../../src/app/category-list/category-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__contentful_service__ = __webpack_require__("../../../../../src/app/contentful.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__settings_settings_component__ = __webpack_require__("../../../../../src/app/settings/settings.component.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -126,43 +129,43 @@ var routes = [
 var AppModule = (function () {
     function AppModule() {
     }
+    AppModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["K" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__product_list_product_list_component__["a" /* ProductListComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__product_detail_product_detail_component__["a" /* ProductDetailComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__category_list_category_list_component__["a" /* CategoryListComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__settings_settings_component__["a" /* SettingsComponent */]
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* RouterModule */].forRoot(routes, { useHash: true }),
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["d" /* MatListModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["f" /* MatToolbarModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["b" /* MatCardModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["a" /* MatButtonModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["e" /* MatTabsModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["c" /* MatInputModule */]
+            ],
+            exports: [
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["d" /* MatListModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["f" /* MatToolbarModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["b" /* MatCardModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["a" /* MatButtonModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["e" /* MatTabsModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["c" /* MatInputModule */]
+            ],
+            providers: [__WEBPACK_IMPORTED_MODULE_10__contentful_service__["a" /* ContentfulService */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
+        })
+    ], AppModule);
     return AppModule;
 }());
-AppModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
-        declarations: [
-            __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__product_list_product_list_component__["a" /* ProductListComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__product_detail_product_detail_component__["a" /* ProductDetailComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__category_list_category_list_component__["a" /* CategoryListComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__settings_settings_component__["a" /* SettingsComponent */]
-        ],
-        imports: [
-            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* RouterModule */].forRoot(routes, { useHash: true }),
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["a" /* MdListModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["b" /* MdToolbarModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["c" /* MdCardModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["d" /* MdButtonModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["e" /* MdTabsModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["f" /* MdInputModule */]
-        ],
-        exports: [
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["a" /* MdListModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["b" /* MdToolbarModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["c" /* MdCardModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["d" /* MdButtonModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["e" /* MdTabsModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["f" /* MdInputModule */]
-        ],
-        providers: [__WEBPACK_IMPORTED_MODULE_10__contentful_service__["a" /* ContentfulService */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
-    })
-], AppModule);
 
-//# sourceMappingURL=app.module.js.map
+
 
 /***/ }),
 
@@ -187,7 +190,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/category-list/category-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <ul class=\"u-listReset category-grid\">\n    <li *ngFor=\"let category of categories\">\n      <md-card class=\"category-card\">\n        <md-card-header>\n          <img *ngIf=\"category.fields.icon\" class=\"category-image\" src=\"{{ category.fields.icon.fields.file.url }}\">\n          <md-card-title>{{ category.fields.title }}</md-card-title>\n          <md-card-subtitle>{{ category.fields.categoryDescription }}</md-card-subtitle>\n        </md-card-header>\n        <md-card-content>\n          <md-list>\n            <md-list-item *ngFor=\"let product of productsForCategories[category.sys.id]\">\n              <a md-line [routerLink]=\"['/products', product.fields.slug]\">{{product.fields.productName}}</a>\n            </md-list-item>\n          </md-list>\n        </md-card-content>\n      </md-card>\n    </li>\n  </ul>\n</div>\n\n"
+module.exports = "<div>\n  <ul class=\"u-listReset category-grid\">\n    <li *ngFor=\"let category of categories\">\n      <mat-card class=\"category-card\">\n        <mat-card-header>\n          <img *ngIf=\"category.fields.icon\" class=\"category-image\" src=\"{{ category.fields.icon.fields.file.url }}\">\n          <mat-card-title>{{ category.fields.title }}</mat-card-title>\n          <mat-card-subtitle>{{ category.fields.categoryDescription }}</mat-card-subtitle>\n        </mat-card-header>\n        <mat-card-content>\n          <mat-list>\n            <mat-list-item *ngFor=\"let product of productsForCategories[category.sys.id]\">\n              <a mat-line [routerLink]=\"['/products', product.fields.slug]\">{{product.fields.productName}}</a>\n            </mat-list-item>\n          </mat-list>\n        </mat-card-content>\n      </mat-card>\n    </li>\n  </ul>\n</div>\n\n"
 
 /***/ }),
 
@@ -195,9 +198,9 @@ module.exports = "<div>\n  <ul class=\"u-listReset category-grid\">\n    <li *ng
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__contentful_service__ = __webpack_require__("../../../../../src/app/contentful.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoryListComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__contentful_service__ = __webpack_require__("../../../../../src/app/contentful.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -230,19 +233,18 @@ var CategoryListComponent = (function () {
             });
         });
     };
+    CategoryListComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-category-list',
+            template: __webpack_require__("../../../../../src/app/category-list/category-list.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/category-list/category-list.component.css")],
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__contentful_service__["a" /* ContentfulService */]])
+    ], CategoryListComponent);
     return CategoryListComponent;
 }());
-CategoryListComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'app-category-list',
-        template: __webpack_require__("../../../../../src/app/category-list/category-list.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/category-list/category-list.component.css")],
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__contentful_service__["a" /* ContentfulService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__contentful_service__["a" /* ContentfulService */]) === "function" && _a || Object])
-], CategoryListComponent);
 
-var _a;
-//# sourceMappingURL=category-list.component.js.map
+
 
 /***/ }),
 
@@ -250,10 +252,9 @@ var _a;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_contentful__ = __webpack_require__("../../../../contentful/dist/contentful.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_contentful___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_contentful__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContentfulService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_contentful__ = __webpack_require__("../../../../contentful/dist/es-modules/contentful.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -343,19 +344,19 @@ var ContentfulService = (function () {
         return Object.assign({}, this.config);
     };
     ContentfulService.prototype._createClient = function () {
-        this.cdaClient = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_contentful__["createClient"])({
+        this.cdaClient = Object(__WEBPACK_IMPORTED_MODULE_1_contentful__["a" /* createClient */])({
             space: this.config.space,
             accessToken: this.config.accessToken
         });
     };
+    ContentfulService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], ContentfulService);
     return ContentfulService;
 }());
-ContentfulService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [])
-], ContentfulService);
 
-//# sourceMappingURL=contentful.service.js.map
+
 
 /***/ }),
 
@@ -380,7 +381,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/product-detail/product-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = " <p *ngIf=\"product\">\n  <md-card class=\"product-card\">\n    <md-card-header>\n      <md-card-title>{{ product.fields.productName }}</md-card-title>\n      <md-card-subtitle>{{ product.fields.sizetypecolor }} | <strong>Price: {{ product.fields.price }} $</strong></md-card-subtitle>\n    </md-card-header>\n    <md-card-content>\n      <md-tab-group>\n        <md-tab *ngIf=\"product.fields.image\" label=\"Image\">\n          <div class=\"tab-container\">\n            <img class=\"u-marginAutoHorizontal\" src=\"{{ product.fields.image[0].fields.file.url }}\">\n            <p>{{ product.fields.image[0].fields.description }}</p>\n          </div>\n        </md-tab>\n        <md-tab label=\"Description\">\n          <div class=\"tab-container\">\n            <p>{{ product.fields.productDescription }}</p>\n            <p>SKU: {{ product.fields.sku || 'SKU not available' }}</p>\n          </div>\n        </md-tab>\n        <md-tab *ngIf=\"product.fields.brand\" label=\"Brand\">\n          <div class=\"tab-container\">\n            <div class=\"brand-panel\">\n              <div class=\"brand-panel-img\">\n                <img src=\"{{ product.fields.brand.fields.logo.fields.file.url }}\">\n              </div>\n              <div>\n                <h3>{{ product.fields.brand.fields.companyName }}</h3>\n                <p>{{ product.fields.brand.fields.companyDescription }}</p>\n              </div>\n            </div>\n          </div>\n        </md-tab>\n      </md-tab-group>\n    </md-card-content>\n  </md-card>\n</p>\n"
+module.exports = " <p *ngIf=\"product\">\n  <mat-card class=\"product-card\">\n    <mat-card-header>\n      <mat-card-title>{{ product.fields.productName }}</mat-card-title>\n      <mat-card-subtitle>{{ product.fields.sizetypecolor }} | <strong>Price: {{ product.fields.price }} $</strong></mat-card-subtitle>\n    </mat-card-header>\n    <mat-card-content>\n      <mat-tab-group>\n        <mat-tab *ngIf=\"product.fields.image\" label=\"Image\">\n          <div class=\"tab-container\">\n            <img class=\"u-marginAutoHorizontal\" src=\"{{ product.fields.image[0].fields.file.url }}\">\n            <p>{{ product.fields.image[0].fields.description }}</p>\n          </div>\n        </mat-tab>\n        <mat-tab label=\"Description\">\n          <div class=\"tab-container\">\n            <p>{{ product.fields.productDescription }}</p>\n            <p>SKU: {{ product.fields.sku || 'SKU not available' }}</p>\n          </div>\n        </mat-tab>\n        <mat-tab *ngIf=\"product.fields.brand\" label=\"Brand\">\n          <div class=\"tab-container\">\n            <div class=\"brand-panel\">\n              <div class=\"brand-panel-img\">\n                <img src=\"{{ product.fields.brand.fields.logo.fields.file.url }}\">\n              </div>\n              <div>\n                <h3>{{ product.fields.brand.fields.companyName }}</h3>\n                <p>{{ product.fields.brand.fields.companyDescription }}</p>\n              </div>\n            </div>\n          </div>\n        </mat-tab>\n      </mat-tab-group>\n    </mat-card-content>\n  </mat-card>\n</p>\n"
 
 /***/ }),
 
@@ -388,12 +389,11 @@ module.exports = " <p *ngIf=\"product\">\n  <md-card class=\"product-card\">\n  
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_switchMap__ = __webpack_require__("../../../../rxjs/add/operator/switchMap.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_switchMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contentful_service__ = __webpack_require__("../../../../../src/app/contentful.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductDetailComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_switchMap__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/switchMap.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contentful_service__ = __webpack_require__("../../../../../src/app/contentful.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -418,19 +418,19 @@ var ProductDetailComponent = (function () {
             .switchMap(function (params) { return _this.ContentfulService.getProduct(params.get('slug')); })
             .subscribe(function (product) { return _this.product = product; });
     };
+    ProductDetailComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
+            selector: 'app-product-detail',
+            template: __webpack_require__("../../../../../src/app/product-detail/product-detail.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/product-detail/product-detail.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__contentful_service__["a" /* ContentfulService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */]])
+    ], ProductDetailComponent);
     return ProductDetailComponent;
 }());
-ProductDetailComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
-        selector: 'app-product-detail',
-        template: __webpack_require__("../../../../../src/app/product-detail/product-detail.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/product-detail/product-detail.component.css")]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__contentful_service__["a" /* ContentfulService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__contentful_service__["a" /* ContentfulService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* ActivatedRoute */]) === "function" && _b || Object])
-], ProductDetailComponent);
 
-var _a, _b;
-//# sourceMappingURL=product-detail.component.js.map
+
 
 /***/ }),
 
@@ -455,7 +455,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/product-list/product-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"u-listReset product-grid\">\n  <li class=\"u-marginBottom\" *ngFor=\"let product of products\">\n    <md-card class=\"product-card\">\n      <md-card-header>\n        <md-card-title>{{ product.fields.productName }}</md-card-title>\n        <md-card-subtitle><strong>Price: {{ product.fields.price }} $</strong></md-card-subtitle>\n      </md-card-header>\n      <img md-card-image src=\"{{ product.fields.image[0].fields.file.url }}\">\n      <md-card-actions class=\"u-marginTopAuto\">\n        <a md-button [routerLink]=\"['/products', product.fields.slug]\">View details</a>\n      </md-card-actions>\n    </md-card>\n  </li>\n</ul>\n"
+module.exports = "<ul class=\"u-listReset product-grid\">\n  <li class=\"u-marginBottom\" *ngFor=\"let product of products\">\n    <mat-card class=\"product-card\">\n      <mat-card-header>\n        <mat-card-title>{{ product.fields.productName }}</mat-card-title>\n        <mat-card-subtitle><strong>Price: {{ product.fields.price }} $</strong></mat-card-subtitle>\n      </mat-card-header>\n      <img mat-card-image src=\"{{ product.fields.image[0].fields.file.url }}\">\n      <mat-card-actions class=\"u-marginTopAuto\">\n        <a mat-button [routerLink]=\"['/products', product.fields.slug]\">View details</a>\n      </mat-card-actions>\n    </mat-card>\n  </li>\n</ul>\n"
 
 /***/ }),
 
@@ -463,9 +463,9 @@ module.exports = "<ul class=\"u-listReset product-grid\">\n  <li class=\"u-margi
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__contentful_service__ = __webpack_require__("../../../../../src/app/contentful.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductListComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__contentful_service__ = __webpack_require__("../../../../../src/app/contentful.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -486,19 +486,18 @@ var ProductListComponent = (function () {
         this.contentfulService.getProducts()
             .then(function (products) { return _this.products = products; });
     };
+    ProductListComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-product-list',
+            template: __webpack_require__("../../../../../src/app/product-list/product-list.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/product-list/product-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__contentful_service__["a" /* ContentfulService */]])
+    ], ProductListComponent);
     return ProductListComponent;
 }());
-ProductListComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'app-product-list',
-        template: __webpack_require__("../../../../../src/app/product-list/product-list.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/product-list/product-list.component.css")]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__contentful_service__["a" /* ContentfulService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__contentful_service__["a" /* ContentfulService */]) === "function" && _a || Object])
-], ProductListComponent);
 
-var _a;
-//# sourceMappingURL=product-list.component.js.map
+
 
 /***/ }),
 
@@ -523,7 +522,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/settings/settings.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<md-card>\n  <md-card-header>\n    <md-card-title>Settings</md-card-title>\n    <md-card-subtitle>Use your own space</md-card-subtitle>\n  </md-card-header>\n  <p>\n      This demo application is connected to a read-only demo space. Use the form below\n      to connect to your own space. The space needs to be created implementing the\n      product catalogue data template from Contentful to function properly.\n  </p>\n  <p>Once a valid space id and api for the deliver api is provided, the credentials need to\n      be saved in the current browser tab session. For convenience a deeplink to the settings dialogue\n      can be created.\n  </p>\n  <md-card-content>\n    <form #settingsForm=\"ngForm\" (submit)=\"saveConfig()\">\n      <md-input-container class=\"example-full-width push-down\">\n        <input mdInput placeholder=\"Space Id\" [(ngModel)]=\"config.space\" name=\"spaceId\" required>\n        <md-hint align=\"start\" *ngIf=\"errorMessages.space\"><strong>12 alpha-numeric characters required</strong> </md-hint>\n      </md-input-container>\n      <md-input-container class=\"example-full-width push-down\">\n        <input mdInput placeholder=\"CDA access token\" [(ngModel)]=\"config.accessToken\" name=\"accessToken\" required>\n        <md-hint align=\"start\" *ngIf=\"errorMessages.accessToken\"><strong>64 alpha-numeric characters required</strong> </md-hint>\n      </md-input-container>\n\n      <p *ngIf=\"deepLink\">\n        You can quickly access this configuration by calling <a href=\"{{ deepLink }}\">this URL</a>.\n      <p>\n\n      <p>\n        <button md-button [disabled]=\"settingsForm.invalid\">Save configuration</button>\n        <button md-button (click)=\"resetConfig()\" type=\"reset\">Reset</button>\n      </p>\n    </form>\n  </md-card-content>\n</md-card>\n\n\n\n"
+module.exports = "<mat-card>\n  <mat-card-header>\n    <mat-card-title>Settings</mat-card-title>\n    <mat-card-subtitle>Use your own space</mat-card-subtitle>\n  </mat-card-header>\n  <p>\n      This demo application is connected to a read-only demo space. Use the form below\n      to connect to your own space. The space needs to be created implementing the\n      product catalogue data template from Contentful to function properly.\n  </p>\n  <p>Once a valid space id and api for the deliver api is provided, the credentials need to\n      be saved in the current browser tab session. For convenience a deeplink to the settings dialogue\n      can be created.\n  </p>\n  <mat-card-content>\n    <form #settingsForm=\"ngForm\" (submit)=\"saveConfig()\">\n      <mat-input-container class=\"example-full-width push-down\">\n        <input matInput placeholder=\"Space Id\" [(ngModel)]=\"config.space\" name=\"spaceId\" required>\n        <mat-hint align=\"start\" *ngIf=\"errorMessages.space\"><strong>12 alpha-numeric characters required</strong> </mat-hint>\n      </mat-input-container>\n      <mat-input-container class=\"example-full-width push-down\">\n        <input matInput placeholder=\"CDA access token\" [(ngModel)]=\"config.accessToken\" name=\"accessToken\" required>\n        <mat-hint align=\"start\" *ngIf=\"errorMessages.accessToken\"><strong>64 alpha-numeric characters required</strong> </mat-hint>\n      </mat-input-container>\n\n      <p *ngIf=\"deepLink\">\n        You can quickly access this configuration by calling <a href=\"{{ deepLink }}\">this URL</a>.\n      <p>\n\n      <p>\n        <button mat-button [disabled]=\"settingsForm.invalid\">Save configuration</button>\n        <button mat-button (click)=\"resetConfig()\" type=\"reset\">Reset</button>\n      </p>\n    </form>\n  </mat-card-content>\n</mat-card>\n\n\n\n"
 
 /***/ }),
 
@@ -531,10 +530,10 @@ module.exports = "<md-card>\n  <md-card-header>\n    <md-card-title>Settings</md
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contentful_service__ = __webpack_require__("../../../../../src/app/contentful.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SettingsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contentful_service__ = __webpack_require__("../../../../../src/app/contentful.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -590,19 +589,19 @@ var SettingsComponent = (function () {
         }
         return messages;
     };
+    SettingsComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-settings',
+            template: __webpack_require__("../../../../../src/app/settings/settings.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/settings/settings.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__contentful_service__["a" /* ContentfulService */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]])
+    ], SettingsComponent);
     return SettingsComponent;
 }());
-SettingsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'app-settings',
-        template: __webpack_require__("../../../../../src/app/settings/settings.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/settings/settings.component.css")]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__contentful_service__["a" /* ContentfulService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__contentful_service__["a" /* ContentfulService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _b || Object])
-], SettingsComponent);
 
-var _a, _b;
-//# sourceMappingURL=settings.component.js.map
+
 
 /***/ }),
 
@@ -615,11 +614,10 @@ var _a, _b;
 // The build system defaults to the dev environment which uses `environment.ts`, but if you do
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
-// The file contents for the current environment will overwrite these during build.
 var environment = {
     production: false
 };
-//# sourceMappingURL=environment.js.map
+
 
 /***/ }),
 
@@ -628,8 +626,8 @@ var environment = {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/esm5/platform-browser-dynamic.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 
@@ -637,10 +635,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_17" /* enableProdMode */])();
 }
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]);
-//# sourceMappingURL=main.js.map
+Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]);
+
 
 /***/ }),
 

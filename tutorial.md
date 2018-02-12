@@ -1,4 +1,4 @@
-ng new cf-angular-tutorial2ndtry
+ng new cf-angular-tutorial
 
 ng g component product-list
 ng g component product-detail

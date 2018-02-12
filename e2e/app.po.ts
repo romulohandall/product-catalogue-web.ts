@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class CfAngularTutorial2ndtryPage {
+export class CfAngularTutorialPage {
   navigateTo() {
     return browser.get('/');
   }

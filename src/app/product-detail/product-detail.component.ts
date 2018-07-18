@@ -1,4 +1,4 @@
-import 'rxjs/add/operator/switchMap';
+import { switchMap } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { ContentfulService } from '../contentful.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
@@ -19,7 +19,7 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap
-    .switchMap((params: ParamMap) => this.ContentfulService.getProduct(params.get('slug')))
+    .pipe(switchMap((params: ParamMap) => this.ContentfulService.getProduct(params.get('slug'))))
     .subscribe(product => this.product = product);
   }
 }

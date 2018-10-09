@@ -38,6 +38,6 @@ This repository is the base for the [Using Contentful in an Angular project](htt
 There are also other implementations of the product catalogue demo available for iOS and Android
 
 - [Product Catalogue for iOS](https://github.com/contentful/product-catalogue-ios)
-- [Product Catalogue for Andorid](https://github.com/contentful/product-catalogue-android)
+- [Product Catalogue for Android](https://github.com/contentful/product-catalogue-android)
 
 This is a project created for tutorial purposes and not officially supported. Report problems via the issues page but please don't expect a quick and prompt response.
